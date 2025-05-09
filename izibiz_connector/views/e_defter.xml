@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_edefter_tree" model="ir.ui.view">
+        <field name="name">e.defter.tree</field>
+        <field name="model">e.defter</field>
+        <field name="arch" type="xml">
+            <tree js_class="upload_csv">
+                <field name="detailref"/>
+                <field name="entryref"/>
+                <field name="linenumber"/>
+                <field name="linenumbercounter"/>
+                <field name="accmainid"/>
+                <field name="accmainiddesc"/>
+                <field name="accsubid"/>
+                <field name="accsubdesc"/>
+                <field name="amount"/>
+                <field name="debitcreditcode"/>
+                <field name="postingdate"/>
+                <field name="documenttype"/>
+                <field name="doctypedesc"/>
+                <field name="documentnumber"/>
+                <field name="documentreference"/>
+                <field name="documentdate"/>
+                <field name="paymentmethod"/>
+                <field name="detailcomment"/>
+                <field name="erpno"/>
+                <field name="divisionno"/>
+                <field name="enteredby"/>
+                <field name="entereddate"/>
+                <field name="entrynumber"/>
+                <field name="entrycomment"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_edefter_form" model="ir.ui.view">
+        <field name="name">e.defter.form</field>
+        <field name="model">e.defter</field>
+        <field name="arch" type="xml">
+            <form string="E-Defter">
+                <sheet>
+                    <group>
+                        <field name="detailref"/>
+                        <field name="entryref"/>
+                        <field name="linenumber"/>
+                        <field name="linenumbercounter"/>
+                        <field name="accmainid"/>
+                        <field name="accmainiddesc"/>
+                        <field name="accsubid"/>
+                        <field name="accsubdesc"/>
+                        <field name="amount"/>
+                        <field name="debitcreditcode"/>
+                        <field name="postingdate"/>
+                        <field name="documenttype"/>
+                        <field name="doctypedesc"/>
+                        <field name="documentnumber"/>
+                        <field name="documentreference"/>
+                        <field name="documentdate"/>
+                        <field name="paymentmethod"/>
+                        <field name="detailcomment"/>
+                        <field name="erpno"/>
+                        <field name="divisionno"/>
+                        <field name="enteredby"/>
+                        <field name="entereddate"/>
+                        <field name="entrynumber"/>
+                        <field name="entrycomment"/>
+                    </group>
+                    <footer>
+                        <button string="Save" type="object" class="oe_highlight" name="action_save"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_e_defter_list_window" model="ir.actions.act_window">
+        <field name="name">E-Defter</field>
+        <field name="res_model">e.defter</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="name">e.defter.tree.inherit</field>
+        <field name="model">e.defter</field>
+        <field name="inherit_id" ref="izibiz_connector.view_edefter_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="js_class">list_view_button</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_e_defter" name="E-Defter" parent="account_reports.account_reports_audit_reports_menu"/>
+    <menuitem id="menu_e_defter_report" name="E-Defter Report"
+              parent="menu_e_defter" action="action_e_defter_list_window"/>
+</odoo>

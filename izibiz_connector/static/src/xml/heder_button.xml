@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="Custom.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+                <button type="button" class="btn btn-primary" t-on-click="onCustomReturnAction">
+                    Ubload CSV
+                </button>
+                <button type="button" class="btn btn-primary" t-on-click="onCustomReturnFunction">
+                    Generate E-Defter
+                </button>
+        </xpath>
+    </t>
+</templates>
+

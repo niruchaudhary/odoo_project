@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_e_defter,e.defter,model_e_defter,,1,1,1,1
+access_import_csv_wizard,import.csv.wizard,model_import_csv_wizard,,1,1,1,1
+access_csv_import_wizard,csv.import.wizard,model_csv_import_wizard,base.group_system,1,1,1,1
+access_e_defter_wizard_user,E-Defter Wizard User,model_e_defter_wizard,base.group_user,1,1,1,1

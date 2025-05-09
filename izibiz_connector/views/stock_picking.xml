@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_stock_picking_form_inherit_parasut" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.parasut</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_generate_e_irsaliye" type="object" string="Generate e-İrsaliye"
+                            class="btn-primary"/>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="e_irsaliye_status_text" readonly="1"
+                           style="font-weight: bold; color: green;"/>
+                </xpath>
+                <xpath expr="//group[@name='other_infos']" position="inside">
+
+                    <field name="e_irsaliye_file" filename="e_irsaliye_filename" readonly="1" widget="binary"
+                           string="Download e-İrsaliye"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
